@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient">
+    <ImageButton
+        android:id="@+id/main_imgBtn_healthjournal"
+        android:layout_width="73.5dp"
+        android:layout_height="187.3dp"
+        android:layout_marginStart="270.5dp"
+        android:layout_marginTop="275.4dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="273.4dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/a"
+        android:contentDescription="@string/app_name"/>
+
+    <ImageButton
+        android:contentDescription="@string/app_name"
+        android:id="@+id/main_imgBtn_healthinformation"
+        android:layout_width="73.5dp"
+        android:layout_height="187.3dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="275.4dp"
+        android:layout_marginEnd="269.5dp"
+        android:layout_marginBottom="273.4dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/asd" />
+
+    <ImageButton
+        android:contentDescription="@string/app_name"
+        android:id="@+id/main_imgBtn_map"
+        android:layout_width="187.3dp"
+        android:layout_height="73.5dp"
+        android:layout_marginStart="113.6dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="113.1dp"
+        android:layout_marginBottom="430.5dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336"
+        android:src="@drawable/b4741" />
+
+    <ImageButton
+        android:contentDescription="@string/app_name"
+        android:id="@+id/main_imgBtn_start"
+        android:layout_width="187.3dp"
+        android:layout_height="73.5dp"
+        android:layout_marginStart="113.4dp"
+        android:layout_marginTop="432.5dp"
+        android:layout_marginEnd="113.4dp"
+        android:layout_marginBottom="231dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336"
+        android:src="@drawable/q4743" />
+
+    <ImageButton
+        android:contentDescription="@string/app_name"
+        android:id="@+id/main_imgBtn_stop"
+        android:layout_width="187.3dp"
+        android:layout_height="73.5dp"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.767"
+        android:src="@drawable/asde" />
+
+    <ImageView
+        android:contentDescription="@string/app_name"
+        android:id="@+id/main_imageView_show"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/w1" />
+
+    <TextView
+        android:id="@+id/main_stepcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="332dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="357dp"
+        android:lineSpacingExtra="-8sp"
+        android:text="0걸음"
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/main_kcalcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="normal"
+        android:layout_marginTop="379dp"
+        android:layout_marginBottom="324dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginEnd="172dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="0kcal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
