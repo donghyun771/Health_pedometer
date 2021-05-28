@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Health pedometer</string>
+    <string name="walkNAME">0걸음</string>
+    <string name="kcalname">0kcal</string>
+</resources>
