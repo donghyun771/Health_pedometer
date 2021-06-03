@@ -3,7 +3,14 @@
     package="com.example.healthpedometer">
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
-
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+<!--    <uses-permission android:name="android.permission."/>-->
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="true"/>
+    <uses-feature android:name="android.hardware.SensorManager"/>
+    <uses-feature android:name="android.hardware.Sensor"/>
+    <uses-feature android:name="android.hardware.SensorEvent"/>
+    <uses-feature android:name="android.hardware.SensorEventListener"/>
     <application
         android:allowBackup="false"
         android:fullBackupContent="false"
@@ -12,7 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthPedometer">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
