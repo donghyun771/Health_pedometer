@@ -11,7 +11,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +24,7 @@ public class Pedometer extends Activity implements SensorEventListener {
     static final int PERMISSIONS_REQUEST= 0x0000001;
     //현재 걸음 수
     private int Steps = 0;
+    private double kcal = 0;
     //리스너가 등록되고 난 후의 step count
 //    private int CounterSteps = 0;
 
@@ -35,7 +35,9 @@ public class Pedometer extends Activity implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         final TextView Walknum = (TextView) findViewById(R.id.main_stepcount);
+        final  TextView Kcalcount = (TextView) findViewById(R.id.main_kcalcount);
         if (event.sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
+
             //stepcountsenersor는 앱이 꺼지더라도 초기화 되지않는다. 그러므로 우리는 초기값을 가지고 있어야한다.
 //            if (CounterSteps < 1) {
 //                // initial value
@@ -46,9 +48,12 @@ public class Pedometer extends Activity implements SensorEventListener {
 //            CounterSteps++;
             if(event.values[0] == 1.0f) {
                 Steps++;
+                kcal += 0.0333;
                 Walknum.setText(Steps + "걸음");
                 Log.i("log: ", "New step detected by STEP_COUNTER sensor. Total step count: " + Steps);
+                Kcalcount.setText(String.format("%.2f", kcal) + "kcal");
             }
+
         }
     }
     @Override
@@ -90,11 +95,10 @@ public class Pedometer extends Activity implements SensorEventListener {
         //센서 연결[걸음수 센서를 이용한 흔듬 감지]
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         stepCountSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
-        final TextView tex = (TextView) findViewById(R.id.main_stepcount);
+
         ImageButton Start = (ImageButton) findViewById(R.id.main_imgBtn_start);
         ImageButton Stop = (ImageButton) findViewById(R.id.main_imgBtn_stop);
         ImageButton Map = (ImageButton) findViewById(R.id.main_imgBtn_map);
-        tex.setText(Steps +"걸음");
         // Required empty public constructor
         if (stepCountSensor == null) {
             Toast.makeText(this.getApplicationContext(), "No Step Detect Sensor", Toast.LENGTH_SHORT).show();
@@ -112,7 +116,9 @@ public class Pedometer extends Activity implements SensorEventListener {
         });
     }
 
-
+//    public void countKcal() {
+//
+//    }
 
     public void OnCheckPermission() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACTIVITY_RECOGNITION) != PERMISSION_GRANTED)  {//|| ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
